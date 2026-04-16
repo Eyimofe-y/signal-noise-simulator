@@ -61,7 +61,7 @@ The simulator compares performance across three scenarios:
 ![Signal comparison](moderate_interference.png)
 
 ### High Interference simulation
-![Signal comparison](High_interference.png)
+![Signal comparison](high_interference.png)
 
 ---
 
