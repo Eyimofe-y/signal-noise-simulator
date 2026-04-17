@@ -1,6 +1,6 @@
-# 📡 Signal & Noise Simulator
+# 📡 Signal and Noise Simulator (with audio)
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Eyimofe-y/signal-noise-simulator/blob/main/Signal_and_Noise_Simulator.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Eyimofe-y/signal-noise-simulator/blob/main/signal_noise_simulator_w_audio.ipynb)
 [![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white)](https://python.org)
 [![Status](https://img.shields.io/badge/Status-Complete-brightgreen)]()
 
@@ -8,7 +8,7 @@
 
 ## 📖 Overview
 
-This project visualizes Claude Shannon's probabilistic model of communication. It simulates how a signal travels through a noisy channel, like a rainstorm or electromagnetic interference, and demonstrates the mathematical limits of signal recovery.
+This project visualizes Claude Shannon's probabilistic model of communication. It simulates how a signal travels through a noisy channel both visually and with audio, like a rainstorm or electromagnetic interference, and demonstrates the mathematical limits of signal recovery.
 
 ---
 
@@ -20,10 +20,13 @@ This simulator moves beyond the textbook to let you:
 - **See** what noise does to a signal
 - **Watch** a filter try to remove it
 - **Measure** exactly how much was recovered using real-world physics
-- **Choose** which SNR Level you would want to visualize using an interactable slider
+- **Choose** which SNR Level you would want to visualize and hear using an interactable slider and audio player
 
-![Signal comparison](interactable_slider.png)
+#### Interactable slider
+![Signal comparison](interactive_slider_w_info.png)
 
+#### Audio player
+![Signal comparison](audio_info.png)
 ---
 
 ## 🧠 The Simulation Workflow
@@ -72,6 +75,7 @@ The simulator compares performance across three scenarios:
 | `NumPy` | Signal generation and power calculations |
 | `SciPy` | Butterworth filter design via `signal.filtfilt` |
 | `Matplotlib` | Data visualisation and plotting |
+| `soundfile` | Read and write audio files |
 | `ipywidgets ` | UI elements (buttons, sliders, dropdowns) |
 | `IPython.display` | Manages how results show up on the screen |
 
@@ -87,8 +91,6 @@ Click the **Open in Colab** badge at the top of this README to run the simulatio
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/signal-noise-simulator
-cd signal-noise-simulator
 
 # 2. Install dependencies
 pip install numpy scipy matplotlib jupyter
@@ -101,11 +103,11 @@ jupyter notebook signal_noise_simulator.ipynb
 
 ## 💭 Key Learnings
 
-The most surprising result? At **3dB SNR**, recovery hits a hard ceiling and no amount of filter tuning can break through it. You can check it out using the simulator!
+The most surprising result? At **3dB SNR**, recovery hits a hard ceiling and no amount of filter tuning can break through it. You can check it out using the simulator and also hear it!
 
 This is not a bug. It's **Channel Capacity**.
 
-Shannon proved that once noise overlaps the signal's own frequency range, no engineering can perfectly separate them. This is the mathematical reality behind why your satellite internet drops during a tropical thunderstorm in some countries (e.g. Nigeria) — not a network management failure but a physics one.
+Shannon proved that once noise overlaps the signal's own frequency range, no engineering can perfectly separate them. This is the mathematical reality behind why your internet drops during rain and thunderstorm in some countries (e.g. Nigeria), it is not a network management failure but a physics one.
 
 ---
 
