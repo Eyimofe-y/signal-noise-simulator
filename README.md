@@ -1,18 +1,17 @@
-# 📡 Signal and Noise Simulator (with audio)
+# Signal and Noise Simulator (with audio)
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Eyimofe-y/signal-noise-simulator/blob/main/signal_noise_simulator_w_audio.ipynb)
 [![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white)](https://python.org)
-[![Status](https://img.shields.io/badge/Status-Complete-brightgreen)]()
 
 ---
 
-## 📖 Overview
+## Overview
 
 This project visualizes Claude Shannon's probabilistic model of communication. It simulates how a signal travels through a noisy channel both visually and with audio, like a rainstorm or electromagnetic interference, and demonstrates the mathematical limits of signal recovery.
 
 ---
 
-## 🧐 Why This Exists
+## Why This Exists
 
 Communication systems (phones, satellites, deep-space probes) fight a fundamental battle: transmitting data through a channel that is actively trying to corrupt it.
 
@@ -29,7 +28,7 @@ This simulator moves beyond the textbook to let you:
 ![Signal comparison](audio_info.png)
 ---
 
-## 🧠 The Simulation Workflow
+## The Simulation Workflow
 
 The code follows Shannon's 5-step model:
 
@@ -39,15 +38,9 @@ The code follows Shannon's 5-step model:
   wave        signal         noise (SNR)       filter         recovery (dB)
 ```
 
-1. **Source** — Generates a clean x Hz sine wave
-2. **Transmitter** — Encodes the signal for the channel
-3. **Noisy Channel** — Adds Gaussian noise based on specific SNR levels
-4. **Receiver** — Applies a Butterworth low-pass filter to attempt recovery
-5. **Destination** — Measures residual noise and recovery quality in decibels
-
 ---
 
-## 📊 Results & Visualisation
+## Results & Visualisation
 
 The simulator compares performance across three scenarios:
 
@@ -66,22 +59,10 @@ The simulator compares performance across three scenarios:
 ### High Interference simulation
 ![Signal comparison](high_interference.png)
 
----
-
-## 🛠️ Tech Stack
-
-| Library | Role |
-|---------|------|
-| `NumPy` | Signal generation and power calculations |
-| `SciPy` | Butterworth filter design via `signal.filtfilt` |
-| `Matplotlib` | Data visualisation and plotting |
-| `soundfile` | Read and write audio files |
-| `ipywidgets ` | UI elements (buttons, sliders, dropdowns) |
-| `IPython.display` | Manages how results show up on the screen |
 
 ---
 
-## 🚀 Getting Started
+## Run it
 
 ### Option 1 — Google Colab (zero setup)
 
@@ -101,7 +82,7 @@ jupyter notebook signal_noise_simulator.ipynb
 
 ---
 
-## 💭 Key Learnings
+## Key Learnings
 
 The most surprising result? At **3dB SNR**, recovery hits a hard ceiling and no amount of filter tuning can break through it. You can check it out using the simulator and also hear it!
 
@@ -111,7 +92,7 @@ Shannon proved that once noise overlaps the signal's own frequency range, no eng
 
 ---
 
-## 📝 License
+## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
@@ -120,5 +101,3 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## 🤝 Connect
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://linkedin.com/in/oluwaferanmi-yesufu-164b72222)
-
-*Built by someone who got tired of asking "why does it do that?" and started simulating it instead.*
